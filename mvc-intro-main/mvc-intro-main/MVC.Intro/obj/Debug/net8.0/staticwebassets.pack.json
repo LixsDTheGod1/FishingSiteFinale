@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Students\\mvc-intro-main\\mvc-intro-main\\MVC.Intro\\wwwroot\\images\\fishing.png",
+      "PackagePath": "staticwebassets\\images\\fishing.png"
+    },
+    {
+      "Id": "C:\\Users\\Students\\mvc-intro-main\\mvc-intro-main\\MVC.Intro\\wwwroot\\images\\fishing2.png",
+      "PackagePath": "staticwebassets\\images\\fishing2.png"
+    },
+    {
       "Id": "C:\\Users\\Students\\mvc-intro-main\\mvc-intro-main\\MVC.Intro\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

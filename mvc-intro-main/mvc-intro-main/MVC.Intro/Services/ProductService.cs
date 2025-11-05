@@ -34,7 +34,9 @@ namespace MVC.Intro.Services
             var toAdd = new Product
             {
                 Name = product.Name,
-                Price = product.Price
+                Price = product.Price,
+                ImageData = product.ImageData,
+                ImageContentType = product.ImageContentType
             };
             _logger.LogInformation("Adding product: {ProductName} with price {ProductPrice}", toAdd.Name, toAdd.Price);
             if (product == null)

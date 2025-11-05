@@ -20,6 +20,7 @@
             <th scope="col" class="text-end">
                 @Html.DisplayNameFor(m => m.Price)
             </th>
+            <th scope="col">Снимка</th>
             <th></th>
         </tr>
     </thead>
@@ -35,6 +36,12 @@
                 </td>
                 <td class="text-end">
                     @Html.DisplayFor(m => item.Price)
+                </td>
+                <td>
+                    @if (item.ImageData != null)
+                    {
+                        <img src="@Url.Action("Image", "Product", new { id = item.Id })" alt="Thumb" style="max-width:64px; height:auto;" />
+                    }
                 </td>
                 <td class="text-nowrap">
                     <a class="btn btn-sm btn-primary me-2" asp-controller="Product" asp-action="Details" asp-route-id="@item.Id">Details</a>

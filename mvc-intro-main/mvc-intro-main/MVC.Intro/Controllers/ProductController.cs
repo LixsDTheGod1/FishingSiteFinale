@@ -37,14 +37,32 @@ namespace MVC.Intro.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateProduct(Product product)
+        public IActionResult CreateProduct(Product product, IFormFile? imageFile)
         {
             if (!ModelState.IsValid)
             {
                 return View("Create", product);
             }
+            if (imageFile != null && imageFile.Length > 0)
+            {
+                using var ms = new MemoryStream();
+                imageFile.CopyTo(ms);
+                product.ImageData = ms.ToArray();
+                product.ImageContentType = imageFile.ContentType;
+            }
             _productService.AddProduct(product);
             return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult Image(Guid id)
+        {
+            var product = _productService.GetProductById(id);
+            if (product.ImageData == null || string.IsNullOrEmpty(product.ImageContentType))
+            {
+                return NotFound();
+            }
+            return File(product.ImageData, product.ImageContentType);
         }
     }
 }

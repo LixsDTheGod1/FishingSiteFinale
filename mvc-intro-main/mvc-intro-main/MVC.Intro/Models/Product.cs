@@ -17,5 +17,10 @@ namespace MVC.Intro.Models
         [Required(ErrorMessage = "Задължително е продуктът да има цена")]
         [Range(24.99,9999.99, ErrorMessage = "Цената трябва да е между 24.99 и 9999.99")]
         public decimal Price { get; set; }
+        [DisplayName("Снимка (BLOB)")]
+        public byte[]? ImageData { get; set; }
+
+        [DisplayName("Тип на съдържанието")]
+        public string? ImageContentType { get; set; }
     }
 }
